@@ -35,14 +35,26 @@ export default function SelectedDifficulty() {
         );
     } else {
         return (
-            <div>
-                <button value={"easy"} onClick={difficulty}>
+            <div className="d-flex justify-content-center">
+                <button
+                    className="btn btn-outline-success mx-3 btn-lg"
+                    value={"easy"}
+                    onClick={difficulty}
+                >
                     Easy
                 </button>
-                <button value={"medium"} onClick={difficulty}>
+                <button
+                    className="btn btn-outline-warning mx-3 btn-lg"
+                    value={"medium"}
+                    onClick={difficulty}
+                >
                     Medium
                 </button>
-                <button value={"hard"} onClick={difficulty}>
+                <button
+                    className="btn btn-outline-danger mx-3 btn-lg"
+                    value={"hard"}
+                    onClick={difficulty}
+                >
                     Hard
                 </button>
             </div>
