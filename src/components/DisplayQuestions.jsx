@@ -1,16 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { EasyQuestions } from "../data/Easy.js";
 
-export default function Easy({ reset }) {
+export default function Easy({
+    reset,
+    EasyQuestions,
+    MediumQuestions,
+    HardQuestions,
+    buttonValue
+}) {
     const [inputValue, setInputValue] = useState("");
     const [score, setScore] = useState(0);
     const [questionCount, setQuestionCount] = useState(0);
     const [randomCommand, setRandomCommand] = useState("");
+    const [bv, setBV] = useState(buttonValue);
+    console.log(bv);
+    console.log(randomCommand);
 
     function random() {
-        setRandomCommand(
-            EasyQuestions[Math.floor(Math.random() * EasyQuestions.length)]
-        );
+        if (bv === "Easy") {
+            setRandomCommand(
+                EasyQuestions[Math.floor(Math.random() * EasyQuestions.length)]
+            );
+        }
+        if (bv === "Medium") {
+            setRandomCommand(
+                MediumQuestions[
+                    Math.floor(Math.random() * MediumQuestions.length)
+                ]
+            );
+        }
+        if (bv === "Hard") {
+            setRandomCommand(
+                HardQuestions[Math.floor(Math.random() * HardQuestions.length)]
+            );
+        }
     }
 
     function goHome() {
@@ -39,7 +61,7 @@ export default function Easy({ reset }) {
         return (
             <div>
                 <div className="jumbotron">
-                    <h1>You have selected "Easy"</h1>
+                    <h1>You have selected {buttonValue}</h1>
                     <p className="lead">
                         This mode is designed to help you get familiar with the
                         most basic of VIM commands. The idea is to help you get

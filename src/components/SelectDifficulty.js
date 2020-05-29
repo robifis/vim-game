@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import Easy from "./Easy.jsx";
-import Medium from "./Medium";
-import Hard from "./Hard";
+import DisplayQuestions from "../components/DisplayQuestions.jsx";
+import {
+    EasyQuestions,
+    MediumQuestions,
+    HardQuestions
+} from "../data/Commands";
 
 export default function SelectedDifficulty() {
     const [buttonValue, setButtonValue] = useState("");
@@ -13,24 +16,36 @@ export default function SelectedDifficulty() {
         setButtonValue("");
     }
 
-    if (buttonValue === "easy") {
+    if (buttonValue === "Easy") {
         return (
             <div>
-                <Easy reset={reset} />
+                <DisplayQuestions
+                    reset={reset}
+                    EasyQuestions={EasyQuestions}
+                    buttonValue={buttonValue}
+                />
             </div>
         );
     }
-    if (buttonValue === "medium") {
+    if (buttonValue === "Medium") {
         return (
             <div>
-                <Medium reset={reset} />
+                <DisplayQuestions
+                    reset={reset}
+                    MediumQuestions={MediumQuestions}
+                    buttonValue={buttonValue}
+                />
             </div>
         );
     }
-    if (buttonValue === "hard") {
+    if (buttonValue === "Hard") {
         return (
             <div>
-                <Hard reset={reset} />
+                <DisplayQuestions
+                    reset={reset}
+                    HardQuestions={HardQuestions}
+                    buttonValue={buttonValue}
+                />
             </div>
         );
     } else {
@@ -38,21 +53,21 @@ export default function SelectedDifficulty() {
             <div className="d-flex justify-content-center">
                 <button
                     className="btn btn-outline-success mx-3 btn-lg"
-                    value={"easy"}
+                    value={"Easy"}
                     onClick={difficulty}
                 >
                     Easy
                 </button>
                 <button
                     className="btn btn-outline-warning mx-3 btn-lg"
-                    value={"medium"}
+                    value={"Medium"}
                     onClick={difficulty}
                 >
                     Medium
                 </button>
                 <button
                     className="btn btn-outline-danger mx-3 btn-lg"
-                    value={"hard"}
+                    value={"Hard"}
                     onClick={difficulty}
                 >
                     Hard
