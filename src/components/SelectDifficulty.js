@@ -7,71 +7,63 @@ import {
 } from "../data/Commands";
 
 export default function SelectedDifficulty() {
-    const [buttonValue, setButtonValue] = useState("");
-
-    function difficulty(e) {
-        setButtonValue(e.target.value);
-    }
+    const [inputValue, setInputValue] = useState("");
     function reset() {
-        setButtonValue("");
+        setInputValue("");
     }
 
-    if (buttonValue === "Easy") {
+    if (inputValue === "Easy" || inputValue === "easy") {
         return (
             <div>
                 <DisplayQuestions
                     reset={reset}
+                    inputValue={
+                        inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+                    }
                     EasyQuestions={EasyQuestions}
-                    buttonValue={buttonValue}
                 />
             </div>
         );
     }
-    if (buttonValue === "Medium") {
+    if (inputValue === "Medium" || inputValue === "medium") {
         return (
             <div>
                 <DisplayQuestions
                     reset={reset}
                     MediumQuestions={MediumQuestions}
-                    buttonValue={buttonValue}
+                    inputValue={
+                        inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+                    }
                 />
             </div>
         );
     }
-    if (buttonValue === "Hard") {
+    if (inputValue === "Hard" || inputValue === "hard") {
         return (
             <div>
                 <DisplayQuestions
                     reset={reset}
                     HardQuestions={HardQuestions}
-                    buttonValue={buttonValue}
+                    inputValue={
+                        inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+                    }
                 />
             </div>
         );
     } else {
         return (
-            <div className="d-flex justify-content-center">
-                <button
-                    className="btn btn-outline-success mx-3 btn-lg"
-                    value={"Easy"}
-                    onClick={difficulty}
-                >
-                    Easy
-                </button>
-                <button
-                    className="btn btn-outline-warning mx-3 btn-lg"
-                    value={"Medium"}
-                    onClick={difficulty}
-                >
-                    Medium
-                </button>
-                <button
-                    className="btn btn-outline-danger mx-3 btn-lg"
-                    value={"Hard"}
-                    onClick={difficulty}
-                >
-                    Hard
-                </button>
+            <div className="container">
+                <h1>How To Quit VIM!</h1>
+                <div className="form-group">
+                    <input
+                        autoFocus
+                        className="form-control form-control-lg"
+                        type="text"
+                        value={inputValue}
+                        placeholder="Enter a difficulty: Easy, Medium or Hard"
+                        onChange={e => setInputValue(e.target.value)}
+                    />
+                </div>
             </div>
         );
     }

@@ -5,15 +5,13 @@ export default function Easy({
     EasyQuestions,
     MediumQuestions,
     HardQuestions,
-    buttonValue
+    inputValue
 }) {
-    const [inputValue, setInputValue] = useState("");
+    const [input, setInput] = useState("");
     const [score, setScore] = useState(0);
     const [questionCount, setQuestionCount] = useState(0);
     const [randomCommand, setRandomCommand] = useState("");
-    const [bv, setBV] = useState(buttonValue);
-    console.log(bv);
-    console.log(randomCommand);
+    const [bv, setBV] = useState(inputValue);
 
     function random() {
         if (bv === "Easy") {
@@ -42,13 +40,13 @@ export default function Easy({
     // Check answer
     function checkAnswer(event) {
         event.preventDefault();
-        if (inputValue === randomCommand.key) {
+        if (input === randomCommand.key) {
             setScore(score + 1);
-            setInputValue("");
+            setInput("");
             random();
             setQuestionCount(questionCount + 1);
         } else {
-            setInputValue("");
+            setInput("");
             random();
             setQuestionCount(questionCount + 1);
         }
@@ -61,7 +59,7 @@ export default function Easy({
         return (
             <div>
                 <div className="jumbotron">
-                    <h1>You have selected {buttonValue}</h1>
+                    <h1>You have selected {inputValue}</h1>
                     <p className="lead">
                         This mode is designed to help you get familiar with the
                         most basic of VIM commands. The idea is to help you get
@@ -83,8 +81,8 @@ export default function Easy({
                                 placeholder="Enter your command"
                                 type="text"
                                 autoFocus
-                                value={inputValue}
-                                onChange={e => setInputValue(e.target.value)}
+                                value={input}
+                                onChange={e => setInput(e.target.value)}
                             />
                             <small className="form-text text-muted text-center">
                                 Press "Enter" to skip
@@ -99,8 +97,6 @@ export default function Easy({
             <div>
                 <h1>Thank you for playing!</h1>
                 <h2>You got {score} commands right</h2>
-                <button>Play again</button>
-                <button onClick={goHome}>Go Home</button>
             </div>
         );
     }
