@@ -55,8 +55,8 @@ export default function Easy({
 
   if (questionCount <= 10) {
     return (
-      <div className="container flex h-screen">
-        <div className="min-w-full m-auto">
+      <div className="container flex ">
+        <div className="min-w-full ">
           <h1>You have selected {inputValue}</h1>
           <div>
             <div className="">

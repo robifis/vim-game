@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="container min-h-full">
         <ul className="flex">
           <li className="mr-3">
-            <a>Github</a>
+            <a href="!#">Github</a>
           </li>
           <li>
-            <a>Email</a>
+            <a href="mailto: bobby@olejnik.dev">Email</a>
           </li>
         </ul>
         <p>All Right Reserverd: Bobby Olejnik 2020</p>

@@ -12,7 +12,7 @@ const EasyQuestions = [
   { key: "0", command: "Jump to the start of the line" },
   { key: "^", command: "Jump to the first non,blank character of the line" },
   { key: "$", command: "Jump to the end of the line" },
-  { key: "g_", command: "Jump to the last non, blank character of the line" },
+  { key: "g_", command: "Jump to the last non-blank character of the line" },
   { key: "gg", command: "Go to the first line of the document" },
   { key: "G", command: "Go to the last line of the document" },
   {
@@ -27,7 +27,7 @@ const EasyQuestions = [
 ];
 
 const MediumQuestions = [
-  { command: "ReMove character before cursor", key: "X" },
+  { command: "Remove character before cursor", key: "X" },
   { command: "Change Word", key: "cw" },
   { command: "Select entire line", key: "V" },
   { command: "Insert new line below cursor", key: "o" },
