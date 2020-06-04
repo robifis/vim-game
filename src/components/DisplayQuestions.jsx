@@ -11,7 +11,7 @@ export default function Easy({
   const [score, setScore] = useState(0);
   const [questionCount, setQuestionCount] = useState(0);
   const [randomCommand, setRandomCommand] = useState("");
-  const [bv, setBV] = useState(inputValue);
+  const [bv] = useState(inputValue);
 
   function random() {
     if (bv === "Easy") {
@@ -29,10 +29,6 @@ export default function Easy({
         HardQuestions[Math.floor(Math.random() * HardQuestions.length)]
       );
     }
-  }
-
-  function goHome() {
-    reset();
   }
 
   // Check answer

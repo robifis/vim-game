@@ -8,11 +8,18 @@ import {
 
 export default function SelectedDifficulty() {
   const [inputValue, setInputValue] = useState("");
+  const [userInput, setUserInput] = useState("");
   function reset() {
     setInputValue("");
   }
 
-  if (inputValue === "Easy" || inputValue === "easy") {
+  const difficulties = ["easy", "Easy", "medium", "Medium", "hard", "Hard"];
+  const checkDifficulty = event => {
+    event.preventDefault();
+    setUserInput(inputValue);
+  };
+
+  if (userInput === "Easy" || userInput === "easy") {
     return (
       <div>
         <DisplayQuestions
@@ -23,7 +30,7 @@ export default function SelectedDifficulty() {
       </div>
     );
   }
-  if (inputValue === "Medium" || inputValue === "medium") {
+  if (userInput === "Medium" || userInput === "medium") {
     return (
       <div>
         <DisplayQuestions
@@ -34,7 +41,7 @@ export default function SelectedDifficulty() {
       </div>
     );
   }
-  if (inputValue === "Hard" || inputValue === "hard") {
+  if (userInput === "Hard" || userInput === "hard") {
     return (
       <div>
         <DisplayQuestions
@@ -44,12 +51,14 @@ export default function SelectedDifficulty() {
         />
       </div>
     );
-  } else {
+  }
+
+  if (!inputValue.includes(difficulties)) {
     return (
       <div className="container flex">
         <div className="">
           <h1 className="text-6xl text-gruvbox-aqua">How To Quit VIM!</h1>
-          <p className="text-justify pb-5 leading-8">
+          <p className="pb-5 text-justify leading-8">
             What Is Vim? Vim is a highly configurable text editor built to
             enable efficient text editing. It is an improved version of the vi
             editor distributed with most UNIX systems. Vim is often called a
@@ -60,14 +69,16 @@ export default function SelectedDifficulty() {
             suggests, Vim can be configured to work in a very simple
             (Notepad-like) way, called evim or Easy Vim.
           </p>
-          <input
-            autoFocus
-            className="w-full px-2 py-3 text-2xl rounded text-gruvbox-bg"
-            type="text"
-            value={inputValue}
-            placeholder="Enter a difficulty: Easy, Medium or Hard"
-            onChange={e => setInputValue(e.target.value)}
-          />
+          <form onSubmit={checkDifficulty}>
+            <input
+              autoFocus
+              className="w-full px-2 py-3 text-2xl rounded text-gruvbox-bg"
+              type="text"
+              value={inputValue}
+              placeholder="Enter a difficulty: Easy, Medium or Hard"
+              onChange={e => setInputValue(e.target.value)}
+            />
+          </form>
         </div>
       </div>
     );

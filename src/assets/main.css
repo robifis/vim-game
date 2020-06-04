@@ -11,6 +11,18 @@ video {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
 .container {
   width: 100%;
 }
@@ -37,18 +49,6 @@ video {
   .container {
     max-width: 1280px;
   }
-}
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  vertical-align: middle;
 }
 
 /**
@@ -2576,10 +2576,6 @@ a {
 
 .font-mono {
   font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New;
-}
-
-.font-custom {
-  font-family: FantasqueSansMonoRegularNerdFontCompleteMono;
 }
 
 .font-hairline {
@@ -8500,6 +8496,11 @@ body {
 /* Sections
    ========================================================================== */
 
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -8509,11 +8510,6 @@ body {
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
 
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
@@ -10554,10 +10550,6 @@ html {
 
   .sm\:font-mono {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New;
-  }
-
-  .sm\:font-custom {
-    font-family: FantasqueSansMonoRegularNerdFontCompleteMono;
   }
 
   .sm\:font-hairline {
@@ -18467,10 +18459,6 @@ html {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New;
   }
 
-  .md\:font-custom {
-    font-family: FantasqueSansMonoRegularNerdFontCompleteMono;
-  }
-
   .md\:font-hairline {
     font-weight: 100;
   }
@@ -26378,10 +26366,6 @@ html {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New;
   }
 
-  .lg\:font-custom {
-    font-family: FantasqueSansMonoRegularNerdFontCompleteMono;
-  }
-
   .lg\:font-hairline {
     font-weight: 100;
   }
@@ -34287,10 +34271,6 @@ html {
 
   .xl\:font-mono {
     font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New;
-  }
-
-  .xl\:font-custom {
-    font-family: FantasqueSansMonoRegularNerdFontCompleteMono;
   }
 
   .xl\:font-hairline {
