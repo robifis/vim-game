@@ -27,7 +27,8 @@ module.exports = {
         purple: "#b16286",
         aqua: "#689d6a",
         grey: "#a89984",
-        orange: "#d65d0e"
+        orange: "#d65d0e",
+        dark_bg: "#1d2021"
       }
     },
     spacing: {

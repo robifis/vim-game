@@ -55,30 +55,33 @@ export default function SelectedDifficulty() {
 
   if (!inputValue.includes(difficulties)) {
     return (
-      <div className="container flex">
-        <div className="">
-          <h1 className="text-6xl text-gruvbox-aqua">How To Quit VIM!</h1>
-          <p className="pb-5 text-justify leading-8">
-            What Is Vim? Vim is a highly configurable text editor built to
-            enable efficient text editing. It is an improved version of the vi
-            editor distributed with most UNIX systems. Vim is often called a
-            "programmer's editor," and so useful for programming that many
-            consider it an entire IDE. It's not just for programmers, though.
-            Vim is perfect for all kinds of text editing, from composing email
-            to editing configuration files. Despite what the above comic
-            suggests, Vim can be configured to work in a very simple
-            (Notepad-like) way, called evim or Easy Vim.
-          </p>
-          <form onSubmit={checkDifficulty}>
-            <input
-              autoFocus
-              className="w-full px-2 py-3 text-2xl rounded text-gruvbox-bg"
-              type="text"
-              value={inputValue}
-              placeholder="Enter a difficulty: Easy, Medium or Hard"
-              onChange={e => setInputValue(e.target.value)}
-            />
-          </form>
+      <div className="flex bg-gruvbox-bg">
+        <div className="container pb-3">
+          <div className="flex">
+            <div className="w-1/2 pr-3">
+              <h1 className="text-5xl text-gruvbox-aqua">How To Quit VIM!</h1>
+              <p className="pb-5 text-justify leading-8">
+                How to Quit Vim is a passion project designed to improve your VIM skills.
+                The sole purpose of the project is to learn all 
+              </p>
+            </div>
+            <div className="flex w-1/2 pl-3 m-auto">
+              <img src="https://i.imgur.com/GkIl8Fn.png" />
+            </div>
+          </div>
+          <div className="pb-3">
+            <h1 className="text-gruvbox-orange">Ready to Play?</h1>
+            <form onSubmit={checkDifficulty}>
+              <input
+                autoFocus
+                className="w-full px-2 py-3 text-2xl rounded text-gruvbox-bg"
+                type="text"
+                value={inputValue}
+                placeholder="Enter a difficulty: Easy, Medium, Hard"
+                onChange={e => setInputValue(e.target.value)}
+              />
+            </form>
+          </div>
         </div>
       </div>
     );

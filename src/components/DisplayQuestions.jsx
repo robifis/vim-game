@@ -51,44 +51,49 @@ export default function Easy({
 
   if (questionCount <= 10) {
     return (
-      <div className="container flex ">
-        <div className="min-w-full ">
-          <h1>You have selected {inputValue}</h1>
-          <div>
-            <div className="">
-              <h2 className="py-3 text-3xl text-gruvbox-orange ">
-                {randomCommand.command}
-              </h2>
+      <div className="bg-gruvbox-bg h-auto">
+        <div className="container flex pb-3">
+          <div className="min-w-full">
+            <h1>You have selected {inputValue}</h1>
+            <div>
+              <div className="">
+                <h2 className="py-3 text-xl text-gruvbox-orange ">
+                  {randomCommand.command}
+                </h2>
+              </div>
             </div>
-          </div>
 
-          <form onSubmit={checkAnswer}>
-            <div className="">
-              <input
-                className="w-full px-2 py-3 text-3xl rounded text-gruvbox-bg"
-                placeholder="Enter your command"
-                type="text"
-                autoFocus
-                value={input}
-                onChange={e => setInput(e.target.value)}
-              />
-              <small className="text-center form-text text-muted">
-                Press "Enter" to skip
-              </small>
-            </div>
-          </form>
+            <form onSubmit={checkAnswer}>
+              <div className="">
+                <input
+                  className="w-full px-2 py-3 text-3xl rounded text-gruvbox-bg"
+                  placeholder="Enter your command"
+                  type="text"
+                  autoFocus
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                />
+                <small className="text-center form-text text-muted">
+                  Press "Enter" to skip
+                </small>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="container flex h-screen">
-        <div className="min-w-full m-auto">
-          <h1 className="text-6xl">Thank you for playing!</h1>
-          <h2 className="text-4xl">
-            You got <span className="text-bold text-gruvbox-red">{score}</span>{" "}
-            commands right
-          </h2>
+      <div className="bg-gruvbox-bg h-auto pb-3">
+        <div className="container flex">
+          <div className="min-w-full m-auto">
+            <h1 className="text-6xl">Thank you for playing!</h1>
+            <h2 className="text-4xl pb-3">
+              You got{" "}
+              <span className="text-bold text-gruvbox-red">{score}</span>{" "}
+              commands right
+            </h2>
+          </div>
         </div>
       </div>
     );
